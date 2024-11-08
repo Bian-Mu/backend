@@ -40,6 +40,7 @@ app.get('/public/2024pic/:filename', (req, res) => {
     });
 });
 
+//获取歌曲信息
 app.get('/api/songInfo', async (req, res) => {
     const songId = req.query.songId;
 
@@ -60,6 +61,7 @@ app.get('/api/songInfo', async (req, res) => {
     }
 });
 
+//获取歌词
 app.get('/api/lyricsInfo', async (req, res) => {
     const songId = req.query.songId;
 
@@ -80,6 +82,7 @@ app.get('/api/lyricsInfo', async (req, res) => {
     }
 });
 
+//获取专辑封面
 app.get("/api/picInfo", async (req, res) => {
     const url = req.query.picUrl;
     try {
@@ -98,6 +101,23 @@ app.get("/api/picInfo", async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 })
+
+//获取歌单
+app.get("/api/playlist", async (req, res) => {
+    const filePath = path.join(__dirname, 'public', '2024song', 'playlist.json');
+
+    fs.readFile(filePath, (err, data) => {
+        if (err) {
+            res.status(201).send('File not found');
+            return;
+        }
+        const json = JSON.parse(data.toString())
+        res.json(json);
+    });
+})
+
+
+
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
