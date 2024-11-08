@@ -40,7 +40,7 @@ app.get('/public/2024pic/:filename', (req, res) => {
     });
 });
 
-//获取歌曲信息
+//API端点：获取歌曲信息
 app.get('/api/songInfo', async (req, res) => {
     const songId = req.query.songId;
 
@@ -61,7 +61,7 @@ app.get('/api/songInfo', async (req, res) => {
     }
 });
 
-//获取歌词
+//API端点：获取歌词
 app.get('/api/lyricsInfo', async (req, res) => {
     const songId = req.query.songId;
 
@@ -72,7 +72,6 @@ app.get('/api/lyricsInfo', async (req, res) => {
                 'Content-Type': 'application/json',
             }
         });
-
         const lyricsData = await responseLyrics.json();
         res.json(lyricsData)
 
@@ -82,7 +81,7 @@ app.get('/api/lyricsInfo', async (req, res) => {
     }
 });
 
-//获取专辑封面
+//API端点：获取专辑封面
 app.get("/api/picInfo", async (req, res) => {
     const url = req.query.picUrl;
     try {
@@ -102,10 +101,9 @@ app.get("/api/picInfo", async (req, res) => {
     }
 })
 
-//获取歌单
+//API端点：获取歌单
 app.get("/api/playlist", async (req, res) => {
     const filePath = path.join(__dirname, 'public', '2024song', 'playlist.json');
-
     fs.readFile(filePath, (err, data) => {
         if (err) {
             res.status(201).send('File not found');
@@ -116,7 +114,28 @@ app.get("/api/playlist", async (req, res) => {
     });
 })
 
+//API端点：获取flac
+app.get("/api/flac", async (req, res) => {
+    const songId = req.query.songId
 
+    const jsonPath = path.join(__dirname, 'public', '2024song', 'playlist.json')
+
+    const jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+    const songEntry = jsonData.find(entry => entry.id === songId.toString());
+
+    if (!songEntry) {
+        res.status(404).send('Song not found');
+        return;
+    }
+    const filePath = path.join(__dirname, 'public', '2024song', 'music', `${songEntry.name}.flac`)
+
+    res.sendFile(filePath, err => {
+        if (err) {
+            res.status(201).send('File not found');
+            return;
+        }
+    })
+})
 
 
 app.listen(port, () => {

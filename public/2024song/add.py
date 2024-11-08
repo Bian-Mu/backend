@@ -7,7 +7,7 @@ def add_to_json_file(file_path):
     new_id = input("ID：")
     new_name = input("歌名：")
     new_singer = input("歌手：")
-    new_path = input("路径：")
+    new_path = "./music/"+new_name+".flac"
 
     new_object = {
         "id": new_id,
