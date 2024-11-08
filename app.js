@@ -48,7 +48,6 @@ app.get('/api/songInfo', async (req, res) => {
         const responseInfo = await fetch(songUrl, {
             headers: {
                 'Content-Type': 'application/json',
-                'User-Agent': 'Mozilla/5.0'
             }
         });
 
@@ -69,7 +68,6 @@ app.get('/api/lyricsInfo', async (req, res) => {
         const responseLyrics = await fetch(lyricsUrl, {
             headers: {
                 'Content-Type': 'application/json',
-                'User-Agent': 'Mozilla/5.0'
             }
         });
 
@@ -81,6 +79,25 @@ app.get('/api/lyricsInfo', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
+app.get("/api/picInfo", async (req, res) => {
+    const url = req.query.picUrl;
+    try {
+        const responsePic = await fetch(url, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+
+        const imageBuffer = await responsePic.arrayBuffer();
+        const buffer = Buffer.from(imageBuffer);
+        res.set('Content-Type', 'image/jpg')
+        res.send(buffer);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+})
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
