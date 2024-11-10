@@ -131,8 +131,16 @@ app.get("/api/flac", async (req, res) => {
 
     res.sendFile(filePath, err => {
         if (err) {
-            res.status(201).send('File not found');
-            return;
+            const filePath2 = path.join(__dirname, 'public', '2024song', 'music', `${songEntry.name}.mp3`)
+            res.sendFile(
+                filePath2, err2 => {
+                    if (err2) {
+                        res.status(201).send('File not found');
+                        return;
+                    }
+                }
+            )
+
         }
     })
 })
