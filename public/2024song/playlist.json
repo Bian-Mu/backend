@@ -16,5 +16,47 @@
         "name": "Feathers",
         "singer": "许钧",
         "path": "./music/Feathers.flac"
+    },
+    {
+        "id": "1334667445",
+        "name": "给朱利安",
+        "singer": "艾怡良",
+        "path": "./music/给朱利安.mp3"
+    },
+    {
+        "id": "1332662900",
+        "name": "Forever Young",
+        "singer": "艾怡良",
+        "path": "./music/Forever Young.mp3"
+    },
+    {
+        "id": "2617262118",
+        "name": "没了我你依然拥有太阳",
+        "singer": "黄霄雲",
+        "path": "./music/没了我你依然拥有太阳.mp3"
+    },
+    {
+        "id": "2608707685",
+        "name": "没语季节",
+        "singer": "黄霄雲",
+        "path": "./music/没语季节.mp3"
+    },
+    {
+        "id": "1989142846",
+        "name": "（……恋人絮语）",
+        "singer": "吴青峰",
+        "path": "./music/（……恋人絮语）.mp3"
+    },
+    {
+        "id": "2006630436",
+        "name": "讲话是闭嘴的时候",
+        "singer": "汪苏泷",
+        "path": "./music/讲话是闭嘴的时候.mp3"
+    },
+    {
+        "id": "2006629539",
+        "name": "软体人生",
+        "singer": "汪苏泷",
+        "path": "./music/软体人生.mp3"
     }
 ]

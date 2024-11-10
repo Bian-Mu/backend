@@ -7,13 +7,18 @@ def add_to_json_file(file_path):
     new_id = input("ID：")
     new_name = input("歌名：")
     new_singer = input("歌手：")
-    new_path = "./music/"+new_name+".flac"
-
+    new_path = input("格式：1.flac ; 2.mp3  ：")
+    new_pathflac = "./music/"+new_name+".flac"
+    new_pathmp3 = "./music/"+new_name+".mp3"
+    if new_path==1:
+        path=new_pathflac
+    else:
+        path=new_pathmp3
     new_object = {
         "id": new_id,
         "name": new_name,
         "singer": new_singer,
-        "path": new_path
+        "path": path
     }
 
     data.append(new_object)
