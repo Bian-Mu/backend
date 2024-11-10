@@ -58,5 +58,65 @@
         "name": "软体人生",
         "singer": "汪苏泷",
         "path": "./music/软体人生.mp3"
+    },
+    {
+        "id": "523046186",
+        "name": "坏的好人",
+        "singer": "张惠妹",
+        "path": "./music/坏的好人.mp3"
+    },
+    {
+        "id": "519935205",
+        "name": "偷故事的人",
+        "singer": "张惠妹",
+        "path": "./music/偷故事的人.mp3"
+    },
+    {
+        "id": "2147408165",
+        "name": "The Tortured Poets Department",
+        "singer": "Taylor Swift",
+        "path": "./music/The Tortured Poets Department.mp3"
+    },
+    {
+        "id": "1385988348",
+        "name": "＊＊＊＊ it I love you",
+        "singer": "Lana Del Rey",
+        "path": "./music/＊＊＊＊ it I love you.mp3"
+    },
+    {
+        "id": "1387549443",
+        "name": "Cinnamon Girl",
+        "singer": "Lana Del Rey",
+        "path": "./music/Cinnamon Girl.mp3"
+    },
+    {
+        "id": "2032990284",
+        "name": "Did you know that there's a tunnel under Ocean Blvd",
+        "singer": "Lana Del Rey",
+        "path": "./music/Did you know that there's a tunnel under Ocean Blvd.mp3"
+    },
+    {
+        "id": "2032990316",
+        "name": "Kintsugi",
+        "singer": "Lana Del Rey",
+        "path": "./music/Kintsugi.mp3"
+    },
+    {
+        "id": "16593589",
+        "name": "Summertime Sadness",
+        "singer": "Lana Del Rey",
+        "path": "./music/Summertime Sadness.mp3"
+    },
+    {
+        "id": "16593579",
+        "name": "Born To Die",
+        "singer": "Lana Del Rey",
+        "path": "./music/Born To Die.mp3"
+    },
+    {
+        "id": "16593585",
+        "name": "Dark Paradise",
+        "singer": "Lana Del Rey",
+        "path": "./music/Dark Paradise.mp3"
     }
 ]
