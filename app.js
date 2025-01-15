@@ -11,10 +11,10 @@ app.use(cors());
 // 设置静态文件目录
 app.use(express.static('public'));
 
-// API端点：获取public/2024md目录下的指定Markdown文件
-app.get('/public/2024md/:filename', (req, res) => {
+// API端点：获取public/2025md目录下的指定Markdown文件
+app.get('/public/2025md/:filename', (req, res) => {
     const filename = req.params.filename;
-    const filePath = path.join(__dirname, 'public', '2024md', `${filename}`);
+    const filePath = path.join(__dirname, 'public', '2025md', `${filename}`);
 
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
@@ -25,10 +25,10 @@ app.get('/public/2024md/:filename', (req, res) => {
     });
 });
 
-// API端点：获取public/2024pic目录下的指定图片文件
-app.get('/public/2024pic/:filename', (req, res) => {
+// API端点：获取public/2025pic目录下的指定图片文件
+app.get('/public/2025pic/:filename', (req, res) => {
     const filename = req.params.filename;
-    const filePath = path.join(__dirname, 'public', '2024pic', `${filename}`);
+    const filePath = path.join(__dirname, 'public', '2025pic', `${filename}`);
 
     fs.readFile(filePath, (err, data) => {
         if (err) {
