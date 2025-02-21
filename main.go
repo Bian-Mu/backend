@@ -92,9 +92,9 @@ func main(){
 			c.Data(http.StatusOK,"text/plain",data)
 		})
 
-		publicGroup.GET("/2025pic/:picname",func(c *gin.Context){
+		publicGroup.GET("/2024pic/:picname",func(c *gin.Context){
 			picname:=c.Param("picname")
-			picpath:=filepath.Join("public","2025pic",picname)
+			picpath:=filepath.Join("public","2024pic",picname)
 			data,err:=os.ReadFile(picpath)
 			if err != nil{
 				c.AbortWithStatus(http.StatusNoContent)
